@@ -1,0 +1,15 @@
+/* 
+Theme Name: WP Hierarchy
+Author: Daniel Beccaria
+Author URI: https://dbeccaria.info
+Description: A custom theme I developed for wordpress sites. It is fully responsive and does all other sorts of crazy stuff. It's a smorgasbord of individually and flavor
+Version: 1.0
+License: GNU Public License V2 or Later
+Text Domain: wphierarchy
+Tags: one-column, two-column, right-sidebar, flexible-sidebar, accessibility-ready, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-images,
+footer-widgets, post-formats
+*/
+
+body {
+  background: #FFD102;
+}
