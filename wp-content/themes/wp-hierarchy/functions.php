@@ -13,12 +13,33 @@
   add_theme_support( 'start-content' );
 
   // Load in CSS
-  function wp_hierarchy_enqueue_styles () {
+  function wphierarchy_enqueue_styles () {
 
     wp_enqueue_style( 'main-css', get_stylesheet_directory_uri() . '/style.css', [], time(), 'all' );
 
   }
 
-  add_action( 'wp_enqueue_scripts', 'wp_hierarchy_enqueue_styles' );
+  add_action( 'wp_enqueue_scripts', 'wphierarchy_enqueue_styles' );
 
+
+  // Register Menu Locations
+  register_nav_menus( [
+    'main-menu' => esc_html__( 'Main Menu', 'wphierarchy' ),
+  ]);
+
+  // Set Up Widget Areas
+
+  function wphierarchy_widgets_init () {
+    register_sidebar ( [
+      'name' => esc_html__('Main Sidebar', 'wphierarchy'),
+      'id' => 'main-sidebar',
+      'description' => esc_html__('Add widgets for main sidebar here', 'wphierarchy'),
+      'before_widget' => '<section class="widget">',
+      'after_widget' => '</section>',
+      'before_title' => '<h2> class="widget-title">',
+      'after_title' => '</h2>'
+    ] );
+  }
+
+  add_action( 'widgets_init', 'wphierarchy_widgets_init' );
 ?>
