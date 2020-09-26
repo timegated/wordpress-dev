@@ -1,38 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <?php wp_head(); ?>
-</head>
-<body <?php body_class(); ?>>
-  <div id="page">
-  <a href="#content" class="skip-link screen-reader-text" >
-    <?php esc_html_e('Skip to content', 'wphierarchy'); ?>
-  </a>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="profile" href="http://gmpg.org/xfn/11">
+    <?php wp_head(); ?>
+  </head>
+  <body <?php body_class(); ?>>
 
-  <header id="masthead" class="site-header" role="banner">
+    <div id="page">
 
-  <div class="site-branding">
-  <p class="site-title">
-  <a href="<?php echo esc_url( home_url( '/' ) );?>" rel="home">
-    <?php bloginfo( 'name' ); ?>
-  </a>
-  </p>
-<p class="site-description">
-  <?php bloginfo( 'description' );?>
-</p>
+      <a href="#content" class="skip-link screen-reader-text">
+        <?php esc_html_e( 'Skip to content', 'wphierarchy' ); ?>
+      </a>
 
-  </div>
+      <header id="masthead" class="site-header" role="banner">
 
-  <nav id="site-navigation" class="main-navigation" role="navigation">
-    <?php 
-      $args = [
-        'theme_location' => 'main-menu'
-      ];
+        <div class="site-branding">
+          <p class="site-title">
+            <a href="<?php echo esc_url( home_url( '/' ) ) ;?>" rel="home">
+              <?php bloginfo( 'name' ); ?>
+            </a>
+          </p>
+          <p class="site-description" >
+            <?php bloginfo( 'description' ); ?>
+          </p>
+        </div>
 
-    wp_nav_menu( $args ); ?>
+        <nav id="site-navigation" class="main-navigation" role="navigation">
+          <?php
+            $args = [
+              'theme_location' => 'main-menu'
+            ];
+            wp_nav_menu( $args );
+          ?>
+        </nav>
 
-  </nav>
+      </header>
+
       <div id="content" class="site-content">
-
-  </header>
